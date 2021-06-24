@@ -1,0 +1,39 @@
+{
+	"builders":[
+		{
+		"type": "docker",
+		"image": "ubuntu:19.10",
+		"commit": true,
+		"changes": [
+			"EXPOSE 8083",
+			"ENTRYPOINT [\"java\", \"-jar\", \"tema-1.jar\"]" ]
+		}
+	],
+
+	"provisioners":[
+		{
+			"type": "shell",
+			"inline": [
+				"apt-get update", "apt-get install python3 python3-pip python3-apt -yq ", "pip3 install ansible" ]
+		},
+		{
+			"type": "ansible-local",
+			"playbook_file": "/var/lib/jenkins/workspace/job2/playbook.yml"
+		},
+		{
+			"type": "file",
+			"source": "/var/lib/jenkins/workspace/job2/temafinal1/tema-1.jar",
+			"destination": "tema-1.jar"
+		}	
+	],
+	"post-processors":[
+		[
+			{
+				"type": "docker-tag",
+				"repository": "matheusdocker95/tema_final_app",
+				"tag": "latest"
+			},
+			"docker-push"
+		]
+	]
+}

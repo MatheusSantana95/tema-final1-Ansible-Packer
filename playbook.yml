@@ -1,0 +1,9 @@
+---
+- name: ANSIBLE ON DOCKER CONTAINER
+  hosts: all    
+  become_user: root
+  tasks:
+    - name: Install openjdk
+      apt:
+        name: openjdk-8-jdk
+        install_recommends: no
