@@ -23,7 +23,7 @@ This is a guide that will help you to:
 
 ## Video:
 
-There is a video that explain the Pipeline process of this repository. Please click [here](https://www.youtube.com/watch?v=rzaKDeLuVlg) to check it out.
+- There is a video that explain the Pipeline process of this repository. Please click [here](https://www.youtube.com/watch?v=rzaKDeLuVlg) to check it out.
 
 ## Jenkins Configuration:
 
@@ -67,14 +67,14 @@ Click on the option "Install without restart".
 - Secret: (YourPublicDockerhubRepository)
 - Description: Docker Hub Repository
 
-## Pipeline
+## Pipeline:
 
 ### Job1 - Build App:
 
 - Create a new job on Jenkins, choose a name for the job and click in the option: Pipeline.
 - On the tab "Advanced Project Options", go to "Definition" and select the option "Pipeline Script from SCM".
 - After that, on "SCM" select the option "Git". Then paste this link: https://github.com/MatheusSantana95/finalTheme1. 
-- On the option "Branch Specifier (blank for 'any')", type ```*/main```
+- On the option "Branch Specifier (blank for 'any')", type ```*/main```.
 - Finally, click on save.
 
 ### Job2 - Infra App:
@@ -82,7 +82,7 @@ Click on the option "Install without restart".
 - Create a new job on Jenkins, choose a name for the job and click in the option: Pipeline.
 - On the tab "Advanced Project Options", go to "Definition" and select the option "Pipeline Script from SCM".
 - After that, on "SCM" select the option "Git". Then paste this link: https://github.com/MatheusSantana95/tema-final1-Ansible-Packer. 
-- On the option "Branch Specifier (blank for 'any')", type ```*/main```
+- On the option "Branch Specifier (blank for 'any')", type ```*/main```.
 - Finally, click on save.
 
 ### Job3 - Run App:
@@ -91,7 +91,7 @@ Click on the option "Install without restart".
 - On the tab "Advanced Project Options", go to "Definition" and select the option "Pipeline Script and paste the Jenkinsfile script located at "job3-RunApp" folder of this project.
 Finally, click on save.
 
-## Building the jobs.
+## Building the jobs:
 
 1. Go to your jenkins "Dashboard" and select the first job that you´ve created and select the option "Build now".
 - Wait until the proccess finish. 
@@ -114,5 +114,5 @@ Finally, click on save.
 - To do that, you need to inform the parameters in the URL, for example: http://localhost:8083/rxnetty/rxnetty/?num1=[InsertFirstNumberHere]&num2=[InsertSecondNumberHere]&op=[InsertOperationHere].
 - To see the Calculator historic, please type: http://localhost:8083/rxnetty/rxnetty/history.
 - To use this application to do math operations, this application just accepts three parameters: num1, num2 and op.
-- To use this application to consult the historic fo your math operations that you`ve made, this application just accepts the paramether: history.
+- To use this application to consult the historic for your math operations that you`ve made, this application just accepts the paramether: history.
 - This application just accepts the following operations: sum, subtract, multiply, division, and pow.
